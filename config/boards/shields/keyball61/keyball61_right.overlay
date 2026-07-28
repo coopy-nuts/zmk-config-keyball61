@@ -12,29 +12,29 @@
 
 &kscan0 {
     row-gpios
-	    = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 実測:P0.22
-	    , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 実測:P0.24
-	    , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 実測:P1.00
-	    , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 実測:P0.11
-	    , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 実測:P1.04
+	    = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.22 動作確認済
+	    , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.24 動作確認済
+	    , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.00 動作確認済
+	    , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.11 動作確認済
+	    , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.04 動作確認済
         ;
     
 	col-gpios
-        = <&gpio1 6 GPIO_ACTIVE_HIGH> // 4列目 (A0)  ★ここからgpio1
+        = <&gpio1 6 GPIO_ACTIVE_HIGH> //1.06 左下gpio
         , <&gpio1 4 GPIO_ACTIVE_HIGH> // 5列目 (D15) ★ここもgpio1
         , <&gpio1 15 GPIO_ACTIVE_HIGH> 
-        , <&gpio0 2 GPIO_ACTIVE_HIGH>
-        , <&gpio0 29 GPIO_ACTIVE_HIGH>
-		, <&gpio0 31 GPIO_ACTIVE_HIGH>  /* ok */
+        , <&gpio0 2 GPIO_ACTIVE_HIGH>   // 0.02 動作確認済
+        , <&gpio0 29 GPIO_ACTIVE_HIGH>  // 0.29 動作確認済
+		, <&gpio0 31 GPIO_ACTIVE_HIGH>  // 0.31 動作確認済
 		;
 };
 
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
-                <NRF_PSEL(SPIM_MISO, 0, 10)>;
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,  // 1.13 SCK
+                <NRF_PSEL(SPIM_MOSI, 0, 10)>,     // 0.10 MOSI
+                <NRF_PSEL(SPIM_MISO, 0, 10)>;     // 0.10 MOSI(3610な為)
         };
     };
 
@@ -54,14 +54,14 @@
     pinctrl-0 = <&spi1_default>;
     pinctrl-1 = <&spi1_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  // 0.09 CS
 
     trackball: trackball@0 {
         status = "okay";
         compatible = "zmk,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // 1.11 MISO
         automouse-layer = <4>;
 	scroll-layers = <5>;
 	snipe-layers = <6>;
@@ -71,8 +71,8 @@
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,  // 0.17 i2c sda
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;  // 0.08だったの変更 0.20 i2c scl
         };
     };
 
