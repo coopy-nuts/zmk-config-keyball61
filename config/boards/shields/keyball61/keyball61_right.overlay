@@ -20,10 +20,10 @@
         ;
     
 	col-gpios
-        = <&gpio1 15 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.15
-        , <&gpio0 2 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // 0.02 動作確認済
-        , <&gpio0 29 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.29 動作確認済
-		, <&gpio0 31 GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.31 動作確認済
+        = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 1.15
+        , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // 0.02 動作確認済
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.29 動作確認済
+		, <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 0.31 動作確認済
 		;
 };
 
