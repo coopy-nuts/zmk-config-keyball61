@@ -34,11 +34,11 @@
 // RC(1,4)  RC(1,5)  RC(1,6)  RC(1,0)  RC(1,1)  RC(1,2)                        RC(1,9) RC(1,10) RC(1,11) RC(1,13) RC(1,14) RC(1,15)
 &kp GRAVE    &kp Q    &kp W    &kp E    &kp R    &kp T                         &kp Y   &kp U    &kp I    &kp O    &kp P    &kp BSPC  
 // RC(2,4)  RC(2,5)  RC(2,6)  RC(2,0)  RC(2,1)  RC(2,2)                        RC(2,9) RC(2,10) RC(2,11) RC(2,13) RC(2,14) RC(2,15)
-&kp TAB     &kp A    &kp S    &kp D    &kp F    &kp G                          &kp H    &kp J    &kp K    &kp L   &kp SEMI  &kp RET
+&kp TAB     &kp A    &kp S    &kp D    &kp F    &kp G                          &kp H    &kp J    &kp K    &kp L   &kp SEMI &kp RET
 // RC(3,4)  RC(3,5)  RC(3,6)  RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)      RC(3,8)  RC(3,9) RC(3,10) RC(3,11) RC(3,13) RC(3,14) RC(3,15)
-&kp LSHFT   &kp Z   &kp X    &kp C    &kp V    &kp B    &kp LBKT      &kp RBKT &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp SQT
+&kp LSHFT   &kp Z   &kp X    &kp C    &kp V    &kp B    &kp RBKT      &kp BSLH &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp SQT
 // RC(4,4)  RC(4,5)  RC(4,6)  RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)      RC(4,8)  RC(4,9)                            RC(4,14) RC(4,15)
-&kp LCTRL   &kp LALT &kp BSLH &kp INT3 &kp EQUAL &mkp LCLK &mkp RCLK  &kp LBKT &kp SPACE                          &kp LEFT &kp RIGHT
+&kp LCTRL   &kp LALT &kp INT1 &kp INT3 &kp EQUAL &mkp LCLK &mkp RCLK  &kp LBKT  &kp SPACE                          &kp LEFT &kp RIGHT
             >;
             label = "QWERTY";
         };
